@@ -1,4 +1,6 @@
 ﻿using PromotionEngine.Forms.SKU;
+using PromotionEngine.Forms.Promotion;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,18 +51,20 @@ namespace PromotionEngine.Forms
 
         private void View_SKU_List_Click(object sender, EventArgs e)
         {
-            SkuList SkuList = new SkuList();
-            SkuList.Show();
+            SkuList SkuListForm = new SkuList();
+            SkuListForm.Show();
         }
 
         private void Create_Promotion_Click(object sender, EventArgs e)
         {
-
+            AddNewPromotion AddNewPromotionForm = new AddNewPromotion();
+            AddNewPromotionForm.Show();
         }
 
         private void View_Promotions_List_Click(object sender, EventArgs e)
         {
-
+            PromotionList PromotionListForm = new PromotionList();
+            PromotionListForm.Show();
         }
     }
 }
