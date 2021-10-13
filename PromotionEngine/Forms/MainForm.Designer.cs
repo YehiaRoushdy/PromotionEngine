@@ -47,7 +47,7 @@ namespace PromotionEngine.Forms
             // 
             this.Create_SKU.Location = new System.Drawing.Point(56, 78);
             this.Create_SKU.Name = "Create_SKU";
-            this.Create_SKU.Size = new System.Drawing.Size(116, 38);
+            this.Create_SKU.Size = new System.Drawing.Size(152, 38);
             this.Create_SKU.TabIndex = 0;
             this.Create_SKU.Text = "Add New SKU";
             this.Create_SKU.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@ namespace PromotionEngine.Forms
             // 
             this.View_SKU_List.Location = new System.Drawing.Point(56, 21);
             this.View_SKU_List.Name = "View_SKU_List";
-            this.View_SKU_List.Size = new System.Drawing.Size(116, 38);
+            this.View_SKU_List.Size = new System.Drawing.Size(152, 38);
             this.View_SKU_List.TabIndex = 1;
             this.View_SKU_List.Text = "View SKU List";
             this.View_SKU_List.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@ namespace PromotionEngine.Forms
             // 
             this.View_Promotions_List.Location = new System.Drawing.Point(40, 21);
             this.View_Promotions_List.Name = "View_Promotions_List";
-            this.View_Promotions_List.Size = new System.Drawing.Size(146, 44);
+            this.View_Promotions_List.Size = new System.Drawing.Size(168, 44);
             this.View_Promotions_List.TabIndex = 1;
             this.View_Promotions_List.Text = "View Promotions List";
             this.View_Promotions_List.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@ namespace PromotionEngine.Forms
             // 
             this.Create_Promotion.Location = new System.Drawing.Point(40, 81);
             this.Create_Promotion.Name = "Create_Promotion";
-            this.Create_Promotion.Size = new System.Drawing.Size(146, 38);
+            this.Create_Promotion.Size = new System.Drawing.Size(168, 38);
             this.Create_Promotion.TabIndex = 0;
             this.Create_Promotion.Text = "Add New Promotion";
             this.Create_Promotion.UseVisualStyleBackColor = true;

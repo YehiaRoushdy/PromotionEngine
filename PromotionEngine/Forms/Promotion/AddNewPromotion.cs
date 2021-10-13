@@ -47,7 +47,7 @@ namespace PromotionEngine.Forms.Promotion
             int PromotionId = 0;
             oString = "Select * from Promotion where PromotionName=@PromotionName";
             SqlCommand oCmd = new SqlCommand(oString, SQLConnection);
-            oCmd.Parameters.AddWithValue("@Name", PromotionName);
+            oCmd.Parameters.AddWithValue("@PromotionName", PromotionName);
             SQLConnection.Open();
             using (SqlDataReader oReader = oCmd.ExecuteReader())
             {
@@ -58,8 +58,11 @@ namespace PromotionEngine.Forms.Promotion
                 SQLConnection.Close();
             }
 
+            decimal Total = 0;
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
+                if (row.Cells[0].Value == null)
+                    continue;
                 string SKU = row.Cells[0].Value.ToString();
                 int SKU_Id = 0;
                 oString = "Select * from SKU where Sku=@Sku";
@@ -76,7 +79,7 @@ namespace PromotionEngine.Forms.Promotion
                 }
                 decimal Quantity = Convert.ToInt32(row.Cells[1].Value);
                 decimal Price = Convert.ToDecimal(row.Cells[2].Value);
-
+                Total += Price;
                 cmd = new System.Data.SqlClient.SqlCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO dbo.PromotionDetail (Promotion_Id,Sku_Id,Quantity,Price) " +
@@ -86,6 +89,18 @@ namespace PromotionEngine.Forms.Promotion
                 cmd.ExecuteNonQuery();
                 SQLConnection.Close();
             }
+
+            cmd = new System.Data.SqlClient.SqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "UPDATE Promotion SET Total = " + Total + 
+                " WHERE " +
+                "Id='" + PromotionId + "' ";
+            cmd.Connection = SQLConnection;
+            SQLConnection.Open();
+            cmd.ExecuteNonQuery();
+            SQLConnection.Close();
+
+            this.Hide();
         }
     }
 }

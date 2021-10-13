@@ -34,18 +34,16 @@ namespace PromotionEngine.Forms.Promotion
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SKU = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.skuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.promotionEngineDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promotionEngineDBDataSet = new PromotionEngine.PromotionEngineDBDataSet();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.promotionDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.skuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promotionDetailTableAdapter = new PromotionEngine.PromotionEngineDBDataSetTableAdapters.PromotionDetailTableAdapter();
             this.skuTableAdapter = new PromotionEngine.PromotionEngineDBDataSetTableAdapters.SkuTableAdapter();
-            this.SKU = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skuBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.promotionEngineDBDataSetBindingSource)).BeginInit();
@@ -94,6 +92,15 @@ namespace PromotionEngine.Forms.Promotion
             this.dataGridView1.Size = new System.Drawing.Size(605, 308);
             this.dataGridView1.TabIndex = 3;
             // 
+            // SKU
+            // 
+            this.SKU.DataSource = this.skuBindingSource1;
+            this.SKU.DisplayMember = "Sku";
+            this.SKU.HeaderText = "SKU";
+            this.SKU.MinimumWidth = 6;
+            this.SKU.Name = "SKU";
+            this.SKU.Width = 125;
+            // 
             // skuBindingSource1
             // 
             this.skuBindingSource1.DataMember = "Sku";
@@ -109,46 +116,6 @@ namespace PromotionEngine.Forms.Promotion
             this.promotionEngineDBDataSet.DataSetName = "PromotionEngineDBDataSet";
             this.promotionEngineDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // promotionDetailBindingSource
-            // 
-            this.promotionDetailBindingSource.DataMember = "PromotionDetail";
-            this.promotionDetailBindingSource.DataSource = this.promotionEngineDBDataSet;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(411, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Total";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(477, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 22);
-            this.textBox2.TabIndex = 4;
-            // 
-            // promotionDetailTableAdapter
-            // 
-            this.promotionDetailTableAdapter.ClearBeforeFill = true;
-            // 
-            // skuTableAdapter
-            // 
-            this.skuTableAdapter.ClearBeforeFill = true;
-            // 
-            // SKU
-            // 
-            this.SKU.DataSource = this.skuBindingSource1;
-            this.SKU.DisplayMember = "Sku";
-            this.SKU.HeaderText = "SKU";
-            this.SKU.MinimumWidth = 6;
-            this.SKU.Name = "SKU";
-            this.SKU.Width = 125;
-            // 
             // Quantity
             // 
             this.Quantity.HeaderText = "Quantity";
@@ -163,13 +130,24 @@ namespace PromotionEngine.Forms.Promotion
             this.Price.Name = "Price";
             this.Price.Width = 125;
             // 
+            // promotionDetailBindingSource
+            // 
+            this.promotionDetailBindingSource.DataMember = "PromotionDetail";
+            this.promotionDetailBindingSource.DataSource = this.promotionEngineDBDataSet;
+            // 
+            // promotionDetailTableAdapter
+            // 
+            this.promotionDetailTableAdapter.ClearBeforeFill = true;
+            // 
+            // skuTableAdapter
+            // 
+            this.skuTableAdapter.ClearBeforeFill = true;
+            // 
             // AddNewPromotion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -194,8 +172,6 @@ namespace PromotionEngine.Forms.Promotion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
         private PromotionEngineDBDataSet promotionEngineDBDataSet;
         private System.Windows.Forms.BindingSource promotionDetailBindingSource;
         private PromotionEngineDBDataSetTableAdapters.PromotionDetailTableAdapter promotionDetailTableAdapter;

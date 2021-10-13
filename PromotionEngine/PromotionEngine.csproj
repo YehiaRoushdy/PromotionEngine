@@ -60,12 +60,6 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Order\AddNewOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Order\AddNewOrder.Designer.cs">
-      <DependentUpon>AddNewOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Order\OrderList.cs">
       <SubType>Form</SubType>
     </Compile>

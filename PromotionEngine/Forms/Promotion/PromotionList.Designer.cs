@@ -41,14 +41,14 @@ namespace PromotionEngine.Forms.Promotion
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(437, 519);
+            this.dataGridView1.Size = new System.Drawing.Size(552, 519);
             this.dataGridView1.TabIndex = 0;
             // 
             // PromotionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 543);
+            this.ClientSize = new System.Drawing.Size(576, 542);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PromotionList";
             this.Text = "PromotionList";

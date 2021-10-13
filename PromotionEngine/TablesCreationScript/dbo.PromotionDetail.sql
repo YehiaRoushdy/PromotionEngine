@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[PromotionDetail] (
-    [Id]           INT          NOT NULL,
+    [Id]            INT          IDENTITY (1, 1) NOT NULL,
     [Promotion_Id] INT          NULL,
     [Sku_Id]       INT          NULL,
     [Quantity]     INT   NULL,
