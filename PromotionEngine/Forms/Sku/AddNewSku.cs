@@ -27,6 +27,8 @@ namespace PromotionEngine.Forms.SKU
             string SKU = textBox1.Text;
             if (!Regex.IsMatch(SKU, @"^[a-zA-Z]+$"))
                 throw new Exception("SKU Must Contain Only Letters");
+
+            //Inserting New SKU
             decimal Price = numericUpDown1.Value;
             System.Data.SqlClient.SqlConnection SQLConnection = Helper.Con;
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();

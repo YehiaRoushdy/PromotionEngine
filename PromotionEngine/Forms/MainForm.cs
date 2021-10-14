@@ -1,6 +1,6 @@
 ﻿using PromotionEngine.Forms.SKU;
 using PromotionEngine.Forms.Promotion;
-
+using PromotionEngine.Forms.Order;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,12 +41,14 @@ namespace PromotionEngine.Forms
 
         private void Add_New_Order_Click(object sender, EventArgs e)
         {
-
+            AddNewOrder AddNewOrderForm = new AddNewOrder();
+            AddNewOrderForm.Show();
         }
 
         private void View_Previous_Orders_Click(object sender, EventArgs e)
         {
-
+            OrderList OrderListForm = new OrderList();
+            OrderListForm.Show();
         }
 
         private void View_SKU_List_Click(object sender, EventArgs e)

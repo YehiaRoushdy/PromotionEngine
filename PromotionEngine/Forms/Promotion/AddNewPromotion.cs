@@ -35,6 +35,8 @@ namespace PromotionEngine.Forms.Promotion
 
             if (textBox1.Text == string.Empty)
                 throw new Exception("Can't Save Without Entering Promotion Name");
+
+            //Inserting Promotion
             string PromotionName = textBox1.Text;
             cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -44,6 +46,7 @@ namespace PromotionEngine.Forms.Promotion
             cmd.ExecuteNonQuery();
             SQLConnection.Close();
 
+            //Getting The Inserted Promotion ID to Link It To Promotion Detail Records On Insertion
             int PromotionId = 0;
             oString = "Select * from Promotion where PromotionName=@PromotionName";
             SqlCommand oCmd = new SqlCommand(oString, SQLConnection);
@@ -63,6 +66,7 @@ namespace PromotionEngine.Forms.Promotion
             {
                 if (row.Cells[0].Value == null)
                     continue;
+                //Getting SKU_ID
                 string SKU = row.Cells[0].Value.ToString();
                 int SKU_Id = 0;
                 oString = "Select * from SKU where Sku=@Sku";
@@ -77,6 +81,8 @@ namespace PromotionEngine.Forms.Promotion
                     }
                     SQLConnection.Close();
                 }
+
+                //Inserting in Promotion Detail Table
                 decimal Quantity = Convert.ToInt32(row.Cells[1].Value);
                 decimal Price = Convert.ToDecimal(row.Cells[2].Value);
                 Total += Price;
@@ -90,6 +96,7 @@ namespace PromotionEngine.Forms.Promotion
                 SQLConnection.Close();
             }
 
+            //Updating Promotion Total Value
             cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = "UPDATE Promotion SET Total = " + Total + 

@@ -65,9 +65,9 @@ namespace PromotionEngine.Forms
             // 
             // Add_New_Order
             // 
-            this.Add_New_Order.Location = new System.Drawing.Point(37, 78);
+            this.Add_New_Order.Location = new System.Drawing.Point(23, 78);
             this.Add_New_Order.Name = "Add_New_Order";
-            this.Add_New_Order.Size = new System.Drawing.Size(116, 38);
+            this.Add_New_Order.Size = new System.Drawing.Size(171, 38);
             this.Add_New_Order.TabIndex = 2;
             this.Add_New_Order.Text = "Add New Order";
             this.Add_New_Order.UseVisualStyleBackColor = true;
