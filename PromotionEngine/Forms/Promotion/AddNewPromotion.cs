@@ -38,10 +38,9 @@ namespace PromotionEngine.Forms.Promotion
 
             //Inserting Promotion
             string PromotionName = textBox1.Text;
-            cmd = new System.Data.SqlClient.SqlCommand();
+            oString = "INSERT INTO dbo.Promotion (PromotionName) VALUES ('" + PromotionName + "')";
+            cmd = new System.Data.SqlClient.SqlCommand(oString, SQLConnection);
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO dbo.Promotion (PromotionName) VALUES ('" + PromotionName + "')";
-            cmd.Connection = SQLConnection;
             SQLConnection.Open();
             cmd.ExecuteNonQuery();
             SQLConnection.Close();
