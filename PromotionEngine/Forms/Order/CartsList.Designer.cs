@@ -1,7 +1,7 @@
 ﻿
 namespace PromotionEngine.Forms.Order
 {
-    partial class OrderList
+    partial class CartsList
     {
         /// <summary>
         /// Required designer variable.
@@ -44,14 +44,14 @@ namespace PromotionEngine.Forms.Order
             this.dataGridView1.Size = new System.Drawing.Size(552, 519);
             this.dataGridView1.TabIndex = 0;
             // 
-            // OrderList
+            // CartsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 542);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "OrderList";
-            this.Text = "Orders List";
+            this.Name = "CartsList";
+            this.Text = "Carts";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

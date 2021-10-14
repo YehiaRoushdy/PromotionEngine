@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PromotionEngine.Forms.Order
 {
-    public partial class OrderList : Form
+    public partial class CartsList : Form
     {
-        public OrderList()
+        public CartsList()
         {
             InitializeComponent(); 
             BindGrid();

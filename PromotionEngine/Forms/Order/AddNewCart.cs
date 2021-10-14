@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PromotionEngine.Forms.Order
 {
-    public partial class AddNewOrder : Form
+    public partial class AddNewCart : Form
     {
-        public AddNewOrder()
+        public AddNewCart()
         {
             InitializeComponent();
         }

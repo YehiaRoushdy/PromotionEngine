@@ -1,7 +1,7 @@
 ﻿
 namespace PromotionEngine.Forms.Order
 {
-    partial class AddNewOrder
+    partial class AddNewCart
     {
         /// <summary>
         /// Required designer variable.
@@ -32,28 +32,28 @@ namespace PromotionEngine.Forms.Order
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SKU = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.skuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promotionEngineDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promotionEngineDBDataSet = new PromotionEngine.PromotionEngineDBDataSet();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cartItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promotionDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promotionDetailTableAdapter = new PromotionEngine.PromotionEngineDBDataSetTableAdapters.PromotionDetailTableAdapter();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cartItemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.cartItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cartItemTableAdapter = new PromotionEngine.PromotionEngineDBDataSetTableAdapters.CartItemTableAdapter();
-            this.skuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.skuTableAdapter = new PromotionEngine.PromotionEngineDBDataSetTableAdapters.SkuTableAdapter();
-            this.SKU = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.promotionEngineDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.promotionEngineDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.promotionDetailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartItemBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -82,6 +82,20 @@ namespace PromotionEngine.Forms.Order
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
+            // SKU
+            // 
+            this.SKU.DataSource = this.skuBindingSource;
+            this.SKU.DisplayMember = "Sku";
+            this.SKU.HeaderText = "SKU";
+            this.SKU.MinimumWidth = 6;
+            this.SKU.Name = "SKU";
+            this.SKU.Width = 125;
+            // 
+            // skuBindingSource
+            // 
+            this.skuBindingSource.DataMember = "Sku";
+            this.skuBindingSource.DataSource = this.promotionEngineDBDataSetBindingSource;
+            // 
             // promotionEngineDBDataSetBindingSource
             // 
             this.promotionEngineDBDataSetBindingSource.DataSource = this.promotionEngineDBDataSet;
@@ -91,6 +105,27 @@ namespace PromotionEngine.Forms.Order
             // 
             this.promotionEngineDBDataSet.DataSetName = "PromotionEngineDBDataSet";
             this.promotionEngineDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cartItemBindingSource
+            // 
+            this.cartItemBindingSource.DataMember = "CartItem";
+            this.cartItemBindingSource.DataSource = this.promotionEngineDBDataSetBindingSource;
             // 
             // promotionDetailBindingSource
             // 
@@ -113,48 +148,13 @@ namespace PromotionEngine.Forms.Order
             this.cartItemBindingSource1.DataMember = "CartItem";
             this.cartItemBindingSource1.DataSource = this.promotionEngineDBDataSetBindingSource;
             // 
-            // cartItemBindingSource
-            // 
-            this.cartItemBindingSource.DataMember = "CartItem";
-            this.cartItemBindingSource.DataSource = this.promotionEngineDBDataSetBindingSource;
-            // 
             // cartItemTableAdapter
             // 
             this.cartItemTableAdapter.ClearBeforeFill = true;
             // 
-            // skuBindingSource
-            // 
-            this.skuBindingSource.DataMember = "Sku";
-            this.skuBindingSource.DataSource = this.promotionEngineDBDataSetBindingSource;
-            // 
             // skuTableAdapter
             // 
             this.skuTableAdapter.ClearBeforeFill = true;
-            // 
-            // SKU
-            // 
-            this.SKU.DataSource = this.skuBindingSource;
-            this.SKU.DisplayMember = "Sku";
-            this.SKU.HeaderText = "SKU";
-            this.SKU.MinimumWidth = 6;
-            this.SKU.Name = "SKU";
-            this.SKU.Width = 125;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.Width = 125;
             // 
             // label1
             // 
@@ -175,7 +175,7 @@ namespace PromotionEngine.Forms.Order
             this.textBox1.Size = new System.Drawing.Size(152, 22);
             this.textBox1.TabIndex = 6;
             // 
-            // AddNewOrder
+            // AddNewCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,16 +185,16 @@ namespace PromotionEngine.Forms.Order
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Name = "AddNewOrder";
-            this.Text = "Add New Order";
+            this.Name = "AddNewCart";
+            this.Text = "New Cart";
             this.Load += new System.EventHandler(this.AddNewOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.promotionEngineDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.promotionEngineDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.promotionDetailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartItemBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skuBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

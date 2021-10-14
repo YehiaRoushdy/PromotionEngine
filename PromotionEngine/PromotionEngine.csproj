@@ -60,17 +60,17 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Order\AddNewOrder.cs">
+    <Compile Include="Forms\Order\AddNewCart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Order\AddNewOrder.Designer.cs">
-      <DependentUpon>AddNewOrder.cs</DependentUpon>
+    <Compile Include="Forms\Order\AddNewCart.Designer.cs">
+      <DependentUpon>AddNewCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Order\OrderList.cs">
+    <Compile Include="Forms\Order\CartsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Order\OrderList.Designer.cs">
-      <DependentUpon>OrderList.cs</DependentUpon>
+    <Compile Include="Forms\Order\CartsList.Designer.cs">
+      <DependentUpon>CartsList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Promotion\AddNewPromotion.cs">
       <SubType>Form</SubType>
@@ -107,11 +107,11 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Order\AddNewOrder.resx">
-      <DependentUpon>AddNewOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Order\AddNewCart.resx">
+      <DependentUpon>AddNewCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Order\OrderList.resx">
-      <DependentUpon>OrderList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Order\CartsList.resx">
+      <DependentUpon>CartsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Promotion\AddNewPromotion.resx">
       <DependentUpon>AddNewPromotion.cs</DependentUpon>
