@@ -31,15 +31,7 @@ namespace PromotionEngine.Forms.SKU
 
             //Inserting New SKU
             decimal Price = numericUpDown1.Value;
-            System.Data.SqlClient.SqlConnection SQLConnection = Helper.Con;
-            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO dbo.Sku (Sku, Price) VALUES ('" + SKU + "', " + Price + ")";
-            cmd.Connection = SQLConnection;
-            SQLConnection.Open();
-            cmd.ExecuteNonQuery();
-            SQLConnection.Close();
-            MessageBox.Show("New SKU Was Saved Successfully", "Success", MessageBoxButtons.OK);
+            Helper.InsertingNewSKU(SKU, Price);
             this.Hide();
         }
     }

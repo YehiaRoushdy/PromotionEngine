@@ -40,7 +40,7 @@ namespace PromotionEngine.Forms.Order
 
             //Getting The Inserted Cart ID to Link It To Cart Item On Insertion
             int Cart_Id = 0;
-            oString = "Select * from Cart where OrderDate='" + this.dateTimePicker1.Value + "' And Total=" 
+            oString = "Select * from Cart where OrderDate='" + this.dateTimePicker1.Value + "' And Total="
                 + Convert.ToDecimal(this.textBox1.Text);
             SqlCommand oCmd = new SqlCommand(oString, SQLConnection);
             oCmd.Parameters.AddWithValue("@OrderDate", this.dateTimePicker1.Value);
@@ -150,13 +150,8 @@ namespace PromotionEngine.Forms.Order
                         SQLConnection.Close();
                     }
 
-                    //Getting In Promotion and Left Out Quantity
-                    int LeftOutPromotionQuantity = CurrentQuantity - PromotionQuantity;
-                    RowTotal += PromotionPrice;
-
-                    decimal LeftOutPromotionPrice = Price * LeftOutPromotionQuantity;
-                    RowTotal += LeftOutPromotionPrice;
-
+                    //Calculating Row Total
+                    RowTotal = Helper.CalculateSKUTotal(PromotionQuantity, CurrentQuantity, Price, PromotionPrice);
 
                     //Setting Total In The New Cell
                     dataGridView1.Rows[e.RowIndex].Cells[2].Value = RowTotal;
@@ -164,7 +159,6 @@ namespace PromotionEngine.Forms.Order
                     decimal OrderTotal = Convert.ToDecimal(this.textBox1.Text);
                     OrderTotal += RowTotal;
                     this.textBox1.Text = OrderTotal.ToString();
-
                 }
             }
 
