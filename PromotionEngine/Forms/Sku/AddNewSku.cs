@@ -20,6 +20,7 @@ namespace PromotionEngine.Forms.SKU
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Validations
             if (textBox1.Text == string.Empty)
                 throw new Exception("Can't Save Without Entering SKU");
             if (numericUpDown1.Value == 0)

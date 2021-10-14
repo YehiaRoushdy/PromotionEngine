@@ -21,8 +21,9 @@ namespace PromotionEngine.Forms.SKU
 
         private void BindGrid()
         {
-            string constring = Helper.str;
-            using (SqlConnection con = new SqlConnection(constring))
+            //Retreiving ALL SKUs  
+            string ConnectionString = Helper.str;
+            using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT * FROM Sku", con))
                 {

@@ -20,9 +20,7 @@ namespace PromotionEngine.Forms.Promotion
 
         private void AddNewPromotion_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'promotionEngineDBDataSet.Sku' table. You can move, or remove it, as needed.
             this.skuTableAdapter.Fill(this.promotionEngineDBDataSet.Sku);
-            // TODO: This line of code loads data into the 'promotionEngineDBDataSet.PromotionDetail' table. You can move, or remove it, as needed.
             this.promotionDetailTableAdapter.Fill(this.promotionEngineDBDataSet.PromotionDetail);
         }
 
@@ -60,6 +58,8 @@ namespace PromotionEngine.Forms.Promotion
                 SQLConnection.Close();
             }
 
+
+            //Inserting Promotion Details
             decimal Total = 0;
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
