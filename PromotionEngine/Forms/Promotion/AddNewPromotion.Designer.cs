@@ -168,10 +168,10 @@ namespace PromotionEngine.Forms.Promotion
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private PromotionEngineDBDataSet promotionEngineDBDataSet;
         private System.Windows.Forms.BindingSource promotionDetailBindingSource;
         private PromotionEngineDBDataSetTableAdapters.PromotionDetailTableAdapter promotionDetailTableAdapter;

@@ -102,10 +102,10 @@ namespace PromotionEngine.Forms.SKU
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

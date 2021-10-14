@@ -201,8 +201,8 @@ namespace PromotionEngine.Forms.Order
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private PromotionEngineDBDataSet promotionEngineDBDataSet;
         private System.Windows.Forms.BindingSource promotionDetailBindingSource;
         private PromotionEngineDBDataSetTableAdapters.PromotionDetailTableAdapter promotionDetailTableAdapter;
@@ -217,6 +217,6 @@ namespace PromotionEngine.Forms.Order
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }
