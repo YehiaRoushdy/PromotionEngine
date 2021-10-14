@@ -51,7 +51,7 @@ namespace PromotionEngine.Forms.SKU
             this.ClientSize = new System.Drawing.Size(556, 513);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SkuList";
-            this.Text = "SKU List";
+            this.Text = "SKUs";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

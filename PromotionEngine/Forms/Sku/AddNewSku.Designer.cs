@@ -82,7 +82,7 @@ namespace PromotionEngine.Forms.SKU
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown1.TabIndex = 6;
             // 
-            // CreateSku
+            // AddNewSku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,8 +92,8 @@ namespace PromotionEngine.Forms.SKU
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Name = "CreateSku";
-            this.Text = "Add New SKU";
+            this.Name = "AddNewSku";
+            this.Text = "New SKU";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

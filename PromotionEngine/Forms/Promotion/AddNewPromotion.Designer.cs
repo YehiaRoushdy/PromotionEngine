@@ -153,7 +153,7 @@ namespace PromotionEngine.Forms.Promotion
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "AddNewPromotion";
-            this.Text = "Add New Promotion";
+            this.Text = "New Promotion";
             this.Load += new System.EventHandler(this.AddNewPromotion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skuBindingSource1)).EndInit();
