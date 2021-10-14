@@ -110,6 +110,9 @@
     <EmbeddedResource Include="Forms\Order\AddNewOrder.resx">
       <DependentUpon>AddNewOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Order\OrderList.resx">
+      <DependentUpon>OrderList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Promotion\AddNewPromotion.resx">
       <DependentUpon>AddNewPromotion.cs</DependentUpon>
     </EmbeddedResource>
