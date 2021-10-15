@@ -20,8 +20,6 @@ namespace PromotionEngine.Forms.Order
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string oString = "";
-            SqlCommand cmd = null;
             DataGridView dataGridView = this.dataGridView1;
             System.Data.SqlClient.SqlConnection SQLConnection = Helper.Con;
 
@@ -66,8 +64,6 @@ namespace PromotionEngine.Forms.Order
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            string oString = "";
-            SqlCommand cmd = null;
             decimal RowTotal = 0;
             System.Data.SqlClient.SqlConnection SQLConnection = Helper.Con;
             if (dataGridView1.Columns[e.ColumnIndex].Name == "quantityDataGridViewTextBoxColumn")
@@ -80,13 +76,15 @@ namespace PromotionEngine.Forms.Order
                 else
                 {
                     string SKU = gridrow.Cells[0].Value.ToString();
-                    int SKU_Id = Convert.ToInt32(Helper.GettingSkuIdAndPrice(SKU)[0]);
-                    decimal Price = Convert.ToDecimal(Helper.GettingSkuIdAndPrice(SKU)[1]);
+                    var SKU_Details = Helper.GettingSkuIdAndPrice(SKU);
+                    int SKU_Id = Convert.ToInt32(SKU_Details[0]);
+                    decimal Price = Convert.ToDecimal(SKU_Details[1]);
 
 
                     //Getting Promotion For The SKU
-                    int PromotionQuantity = Convert.ToInt32(Helper.GettingPromotionQuantityAndPrice(SKU_Id)[0]);
-                    decimal PromotionPrice = Convert.ToDecimal(Helper.GettingPromotionQuantityAndPrice(SKU_Id)[1]);
+                    var Promotion_Details = Helper.GettingPromotionQuantityAndPrice(SKU_Id);
+                    int PromotionQuantity = Convert.ToInt32(Promotion_Details[0]);
+                    decimal PromotionPrice = Convert.ToDecimal(Promotion_Details[1]);
 
 
                     //Calculating Row Total
