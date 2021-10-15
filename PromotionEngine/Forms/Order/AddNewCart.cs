@@ -28,33 +28,15 @@ namespace PromotionEngine.Forms.Order
             if (textBox1.Text == string.Empty)
                 throw new Exception("Can't Save Without Entering Promotion Name");
 
-            //Inserting Order
-            oString = "INSERT INTO dbo.Cart (OrderDate,Total) VALUES ('" + this.dateTimePicker1.Value + "'," +
-                Convert.ToDecimal(this.textBox1.Text) + ")";
-            cmd = new System.Data.SqlClient.SqlCommand(oString, SQLConnection);
-            cmd.CommandType = System.Data.CommandType.Text;
-            SQLConnection.Open();
-            cmd.ExecuteNonQuery();
-            SQLConnection.Close();
+
+            decimal Cart_Total = Convert.ToDecimal(this.textBox1.Text);
+
+            //Inserting Cart
+            Helper.InsertingNewCart(this.dateTimePicker1.Value, Cart_Total);
 
 
             //Getting The Inserted Cart ID to Link It To Cart Item On Insertion
-            int Cart_Id = 0;
-            oString = "Select * from Cart where OrderDate='" + this.dateTimePicker1.Value + "' And Total="
-                + Convert.ToDecimal(this.textBox1.Text);
-            SqlCommand oCmd = new SqlCommand(oString, SQLConnection);
-            oCmd.Parameters.AddWithValue("@OrderDate", this.dateTimePicker1.Value);
-            oCmd.Parameters.AddWithValue("@Total", Convert.ToDecimal(this.textBox1.Text));
-            SQLConnection.Open();
-            using (SqlDataReader oReader = oCmd.ExecuteReader())
-            {
-                while (oReader.Read())
-                {
-                    Cart_Id = Convert.ToInt32(oReader["Id"]);
-                }
-                SQLConnection.Close();
-            }
-
+            int Cart_Id = Helper.GettingCartId(this.dateTimePicker1.Value, Cart_Total);
 
 
             //Inserting Order Details
@@ -64,31 +46,12 @@ namespace PromotionEngine.Forms.Order
                     continue;
                 //Getting SKU_ID
                 string SKU = row.Cells[0].Value.ToString();
-                int SKU_Id = 0;
-                oString = "Select * from SKU where Sku=@Sku";
-                cmd = new SqlCommand(oString, SQLConnection);
-                cmd.Parameters.AddWithValue("@Sku", SKU);
-                SQLConnection.Open();
-                using (SqlDataReader oReader = cmd.ExecuteReader())
-                {
-                    while (oReader.Read())
-                    {
-                        SKU_Id = Convert.ToInt32(oReader["Id"]);
-                    }
-                    SQLConnection.Close();
-                }
+                int SKU_Id = Convert.ToInt32(Helper.GettingSkuIdAndPrice(SKU)[0]);
 
                 //Inserting in Cart Item Table
                 decimal Quantity = Convert.ToInt32(row.Cells[1].Value);
                 decimal Total = Convert.ToDecimal(row.Cells[2].Value);
-                cmd = new System.Data.SqlClient.SqlCommand();
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT INTO dbo.CartItem (Sku_Id,Cart_Id,Quantity,Total) " +
-                    "VALUES (" + SKU_Id + "," + Cart_Id + "," + Quantity + "," + Total + ")";
-                cmd.Connection = SQLConnection;
-                SQLConnection.Open();
-                cmd.ExecuteNonQuery();
-                SQLConnection.Close();
+                Helper.InsertingNewCartItem(SKU_Id, Cart_Id, Quantity, Total);
             }
             this.Hide();
         }
@@ -117,38 +80,14 @@ namespace PromotionEngine.Forms.Order
                 else
                 {
                     string SKU = gridrow.Cells[0].Value.ToString();
-                    int SKU_Id = 0;
-                    decimal Price = 0;
+                    int SKU_Id = Convert.ToInt32(Helper.GettingSkuIdAndPrice(SKU)[0]);
+                    decimal Price = Convert.ToDecimal(Helper.GettingSkuIdAndPrice(SKU)[1]);
 
-                    //Getting SKU_ID
-                    oString = "Select * from SKU where Sku='" + SKU + "'";
-                    cmd = new SqlCommand(oString, SQLConnection);
-                    SQLConnection.Open();
-                    using (SqlDataReader oReader = cmd.ExecuteReader())
-                    {
-                        while (oReader.Read())
-                        {
-                            SKU_Id = Convert.ToInt32(oReader["Id"]);
-                            Price = Convert.ToDecimal(oReader["Price"]);
-                        }
-                        SQLConnection.Close();
-                    }
 
                     //Getting Promotion For The SKU
-                    int PromotionQuantity = 0;
-                    decimal PromotionPrice = 0;
-                    oString = "Select * from PromotionDetail where Sku_Id='" + SKU_Id + "'";
-                    cmd = new SqlCommand(oString, SQLConnection);
-                    SQLConnection.Open();
-                    using (SqlDataReader oReader = cmd.ExecuteReader())
-                    {
-                        while (oReader.Read())
-                        {
-                            PromotionQuantity = Convert.ToInt32(oReader["Quantity"]);
-                            PromotionPrice = Convert.ToDecimal(oReader["Price"]);
-                        }
-                        SQLConnection.Close();
-                    }
+                    int PromotionQuantity = Convert.ToInt32(Helper.GettingPromotionQuantityAndPrice(SKU_Id)[0]);
+                    decimal PromotionPrice = Convert.ToDecimal(Helper.GettingPromotionQuantityAndPrice(SKU_Id)[1]);
+
 
                     //Calculating Row Total
                     RowTotal = Helper.CalculateSKUTotal(PromotionQuantity, CurrentQuantity, Price, PromotionPrice);
