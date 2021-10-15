@@ -20,9 +20,7 @@ namespace PromotionEngine
 
             //Getting In Promotion and Left Out Quantity
             int InPromotionQuantity = CartQuantity / PromotionQuantity;
-            int LeftOutPromotionQuantity = 0;
-            if (InPromotionQuantity > 0)
-                LeftOutPromotionQuantity = CartQuantity - (InPromotionQuantity * PromotionQuantity);
+            int LeftOutPromotionQuantity =  CartQuantity - (InPromotionQuantity * PromotionQuantity);
             CartItemTotal += (PromotionPrice * InPromotionQuantity);
 
             decimal LeftOutPromotionPrice = SkuPrice * LeftOutPromotionQuantity;

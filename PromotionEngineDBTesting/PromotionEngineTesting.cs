@@ -50,7 +50,7 @@ namespace PromotionEngineDBTesting
             decimal RowTotal_B = Helper.CalculateSKUTotal(PromotionQuantity_B, Quantity_B, SKU_B_Price, PromotionPrice_B);
 
             decimal RowTotal_A_Expected = 30;
-            decimal RowTotal_B_Expected = 90;
+            decimal RowTotal_B_Expected = 60;
 
             Assert.AreEqual(RowTotal_A, RowTotal_A_Expected);
             Assert.AreEqual(RowTotal_B, RowTotal_B_Expected);
