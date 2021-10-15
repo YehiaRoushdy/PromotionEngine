@@ -27,12 +27,15 @@ namespace PromotionEngineDBTesting
             //Inserting Promotion
             Helper.InsertingNewPromotion("New Promotion");
             int Promotion_Id = Helper.GettingPromotionId("New Promotion");
+            //Promotion Details
+            // 3A -> 15
+            // 3B -> 30
             Helper.InsertingNewPromotionDetail(Promotion_Id, Sku_Id_A, 3, 15);
             Helper.InsertingNewPromotionDetail(Promotion_Id, Sku_Id_B, 3, 30);
 
 
             //Preparing Order Details
-            int Quantity_A = 5;
+            int Quantity_A = 6;
             int Quantity_B = 6;
             var Prommotion_Details_A = Helper.GettingPromotionQuantityAndPrice(Sku_Id_A);
             var Prommotion_Details_B = Helper.GettingPromotionQuantityAndPrice(Sku_Id_B);
@@ -46,7 +49,7 @@ namespace PromotionEngineDBTesting
             decimal RowTotal_A = Helper.CalculateSKUTotal(PromotionQuantity_A, Quantity_A, SKU_A_Price, PromotionPrice_A);
             decimal RowTotal_B = Helper.CalculateSKUTotal(PromotionQuantity_B, Quantity_B, SKU_B_Price, PromotionPrice_B);
 
-            decimal RowTotal_A_Expected = 35;
+            decimal RowTotal_A_Expected = 30;
             decimal RowTotal_B_Expected = 90;
 
             Assert.AreEqual(RowTotal_A, RowTotal_A_Expected);
