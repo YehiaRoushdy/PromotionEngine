@@ -1,0 +1,5 @@
+- This solution is a simple windows form app to help solve the promotion enginee problem
+- The test cases helped to enhance the code logic 
+- The solution connnects to a database to enable simple data processing and saving also to enable the ability to add data as we need
+- We first add  skus as much as we need then we go create promotions and we have the ability to add different promotions 
+- Then we go create the orders and add skus as we need which will retreive the data from the sku pricing or from the promotions.
